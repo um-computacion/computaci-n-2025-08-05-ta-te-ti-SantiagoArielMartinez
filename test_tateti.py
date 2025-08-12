@@ -177,6 +177,24 @@ class TestGanador(unittest.TestCase):
         self.assertEqual(jugador.jugador_x, "Santi")
         self.assertEqual(jugador.jugador_o, "Abi")
 
+    def test_inicializacion(self):
+        self.assertEqual(self.tateti.turno, "X")
+
+    def test_cambiar_turno(self):
+        self.tateti.cambiar_turno()
+        self.assertEqual(self.tateti.turno, "O")
+        self.tateti.cambiar_turno()
+        self.assertEqual(self.tateti.turno, "X")
+
+    def test_obtener_turno(self):
+        jugador = self.tateti.crear_jugador("Santi", "Abi")
+
+        self.tateti.turno = "X"
+        self.assertEqual(self.tateti.obtener_turno(jugador), "Santi(X)")
+
+        self.tateti.turno = "O"
+        self.assertEqual(self.tateti.obtener_turno(jugador), "Abi(O)")
+
 if __name__ == "__main__":
     unittest.main()
 

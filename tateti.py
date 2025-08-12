@@ -18,7 +18,7 @@ class Tateti:
         else:
             self.turno = "X"
 
-    def obtener_turno(self,jugadores):
+    def obtener_turno(self, jugadores : Jugador):
 
         if self.turno == "X":
             return f"{jugadores.jugador_x}(X)"
